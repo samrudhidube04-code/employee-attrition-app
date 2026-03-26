@@ -1,38 +1,398 @@
-.App {
-  text-align: center;
+/* ===== RESET ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #080e1e;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* ===== LAYOUT ===== */
+.app-root {
   display: flex;
   flex-direction: column;
+  height: 100%;
+}
+
+.layout {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  /* important — allows children to scroll independently */
+}
+
+/* ===== SIDEBAR ===== */
+/* Sidebar styles are self-contained in Sidebar.js */
+/* This just ensures it stretches full height */
+.sidebar {
+  align-self: stretch;
+}
+
+/* ===== MAIN CONTENT ===== */
+.main {
+  flex: 1;
+  overflow-y: auto;
+  background: #080e1e;
+  padding: 0;
+}
+
+/* ===== NAVBAR ===== */
+.topbar {
+  background: #0c1528;
+  height: 60px;
+  padding: 0 28px;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  flex-shrink: 0;
+}
+
+/* Left */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-icon {
+  font-size: 22px;
+}
+
+.logo-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+  font-family: 'Outfit', sans-serif;
+}
+
+.black {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.red {
+  color: #94D2BD;
+  font-weight: 700;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Center */
+.navbar-center input {
+  width: 300px;
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+  outline: none;
+  color: white;
+  font-size: 13px;
+  font-family: 'Outfit', sans-serif;
+}
+
+.navbar-center input::placeholder {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+/* Right */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.notification {
+  position: relative;
+  cursor: pointer;
+  font-size: 18px;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.notification:hover {
+  opacity: 1;
+}
+
+.notification .badge {
+  position: absolute;
+  top: -5px;
+  right: -7px;
+  background: #E24B4A;
+  color: white;
+  font-size: 10px;
+  padding: 1px 5px;
+  border-radius: 50%;
+  font-weight: 700;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.email {
+  margin: 0;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.35);
+  font-family: 'Outfit', sans-serif;
+}
+
+.logout-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 7px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: 'Outfit', sans-serif;
+  font-size: 12px;
+  transition: all 0.2s;
+}
+
+.logout-btn:hover {
+  background: rgba(255, 255, 255, 0.09);
+  color: white;
+}
+
+/* ===== STATS CARDS ===== */
+.stats {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.card {
+  flex: 1;
+  padding: 20px;
+  border-radius: 14px;
+  color: white;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 500;
+}
+
+/* ===== TABLE ===== */
+.table-container {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  padding: 16px;
+  border-radius: 14px;
+  margin-top: 20px;
+}
+
+button.primary {
+  background: rgba(148, 210, 189, 0.15);
+  border: 1px solid rgba(148, 210, 189, 0.3);
+  padding: 9px 16px;
+  color: #94D2BD;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+  transition: all 0.2s;
+}
+
+button.primary:hover {
+  background: rgba(148, 210, 189, 0.25);
+}
+
+/* ===== PREDICT ===== */
+.predict-container {
+  padding: 32px 28px;
+  min-height: 100vh;
+  background: #080e1e;
+}
+
+.predict-container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: white;
+  font-family: 'Outfit', sans-serif;
+}
+
+.table-wrapper {
+  width: 90%;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  padding: 20px;
+  border-radius: 14px;
+  overflow-x: auto;
+}
+
+.predict-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.predict-table th,
+.predict-table td {
+  padding: 12px 14px;
+  text-align: center;
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+}
+
+.predict-table thead {
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.predict-table thead th {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+}
+
+.predict-table tbody tr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  transition: background 0.15s;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.predict-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* ===== BADGES ===== */
+.badge-danger {
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.78rem;
+  background: rgba(248, 113, 113, 0.15);
+  color: #f87171;
+  border: 1px solid #f87171;
+}
+
+.badge-success {
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.78rem;
+  background: rgba(74, 222, 128, 0.15);
+  color: #4ade80;
+  border: 1px solid #4ade80;
+}
+
+.badge-pending {
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.78rem;
+  background: rgba(255, 255, 255, 0.07);
+  color: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* ===== PREDICT BUTTON ===== */
+.predict-btn {
+  padding: 7px 14px;
+  border: 1px solid rgba(55, 138, 221, 0.3);
+  border-radius: 7px;
+  background: rgba(55, 138, 221, 0.1);
+  color: #378ADD;
+  cursor: pointer;
+  font-size: 12px;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.predict-btn:hover {
+  background: rgba(55, 138, 221, 0.2);
+}
+
+.predict-btn:disabled {
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.08);
+  cursor: not-allowed;
+}
+
+/* ===== REPORTS BADGES ===== */
+.report-meta {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-bottom: 24px;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.55);
+  font-family: 'Outfit', sans-serif;
+}
+
+.report-meta strong {
+  font-size: 1rem;
+}
+
+.badge-risk {
+  padding: 3px 12px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  background: rgba(248, 113, 113, 0.15);
+  color: #f87171;
+  border: 1px solid #f87171;
+}
+
+.badge-stable {
+  padding: 3px 12px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  background: rgba(74, 222, 128, 0.15);
+  color: #4ade80;
+  border: 1px solid #4ade80;
+}
+
+.badge-high {
+  padding: 3px 12px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  background: rgba(248, 113, 113, 0.15);
+  color: #f87171;
+  border: 1px solid #f87171;
+}
+
+.badge-medium {
+  padding: 3px 12px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  background: rgba(251, 146, 60, 0.15);
+  color: #fb923c;
+  border: 1px solid #fb923c;
+}
+
+.badge-low {
+  padding: 3px 12px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  background: rgba(74, 222, 128, 0.15);
+  color: #4ade80;
+  border: 1px solid #4ade80;
 }

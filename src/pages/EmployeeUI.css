@@ -1,0 +1,174 @@
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+.page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
+
+.container {
+    width: 95%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    padding: 30px;
+    border-radius: 20px;
+    color: white;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.title {
+    text-align: center;
+    font-size: 38px;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+.searchBar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.searchBar input {
+    width: 70%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+}
+
+.searchBar button {
+    padding: 12px 25px;
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.searchBar button:hover {
+    transform: scale(1.05);
+}
+
+.employeeTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.employeeTable th {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 15px;
+}
+
+.employeeTable td {
+    padding: 12px;
+    text-align: center;
+}
+
+.employeeTable tr:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.name {
+    font-weight: bold;
+    color: #ffdd57;
+}
+
+.income {
+    color: #00ffcc;
+}
+
+.badge {
+    background: #00c6ff;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.editBtn,
+.deleteBtn {
+    padding: 8px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: white;
+    transition: 0.3s;
+}
+
+.editBtn {
+    background: #3498db;
+}
+
+.deleteBtn {
+    background: #e74c3c;
+}
+
+.editBtn:hover,
+.deleteBtn:hover {
+    transform: scale(1.1);
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalContent {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    width: 350px;
+    color: black;
+    animation: pop 0.3s ease;
+}
+
+.modalContent input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.modalButtons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.updateBtn {
+    background: #2ecc71;
+    border: none;
+    padding: 8px 15px;
+    color: white;
+    border-radius: 6px;
+}
+
+.cancelBtn {
+    background: #7f8c8d;
+    border: none;
+    padding: 8px 15px;
+    color: white;
+    border-radius: 6px;
+}
+
+@keyframes pop {
+    from {
+        transform: scale(0.7);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}

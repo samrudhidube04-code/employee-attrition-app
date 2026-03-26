@@ -1,0 +1,140 @@
+.report-page {
+    min-height: 100vh;
+    background: #080e1e;
+    padding: 32px 28px;
+    font-family: 'Outfit', sans-serif;
+    color: white;
+}
+
+.report-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.report-container h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.report-meta {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-bottom: 24px;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.report-meta strong {
+    font-size: 1rem;
+}
+
+.download-btn {
+    display: block;
+    margin-bottom: 24px;
+    padding: 10px 22px;
+    background: rgba(124, 58, 237, 0.15);
+    border: 1px solid rgba(124, 58, 237, 0.4);
+    border-radius: 10px;
+    color: #a78bfa;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Outfit', sans-serif;
+}
+
+.download-btn:hover {
+    background: rgba(124, 58, 237, 0.25);
+}
+
+.report-table-container {
+    overflow-x: auto;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.report-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.report-table thead tr {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.report-table th {
+    padding: 12px 14px;
+    text-align: left;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.3);
+    font-weight: 500;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    white-space: nowrap;
+}
+
+.report-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    vertical-align: middle;
+    white-space: nowrap;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.report-table tbody tr:hover td {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.badge-risk {
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    background: rgba(248, 113, 113, 0.15);
+    color: #f87171;
+    border: 1px solid #f87171;
+}
+
+.badge-stable {
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    background: rgba(74, 222, 128, 0.15);
+    color: #4ade80;
+    border: 1px solid #4ade80;
+}
+
+.badge-high {
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    background: rgba(248, 113, 113, 0.15);
+    color: #f87171;
+    border: 1px solid #f87171;
+}
+
+.badge-medium {
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    background: rgba(251, 146, 60, 0.15);
+    color: #fb923c;
+    border: 1px solid #fb923c;
+}
+
+.badge-low {
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    background: rgba(74, 222, 128, 0.15);
+    color: #4ade80;
+    border: 1px solid #4ade80;
+}

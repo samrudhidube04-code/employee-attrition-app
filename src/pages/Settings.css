@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+
+/* ── Page ── */
+.settings-page {
+    min-height: 100vh;
+    background: #080e1e;
+    padding: 32px 28px 64px;
+    font-family: 'Outfit', sans-serif;
+    color: white;
+}
+
+.settings-wrapper {
+    max-width: 560px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* ── Header ── */
+.settings-header {
+    margin-bottom: 8px;
+}
+
+.settings-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: white;
+    margin: 0 0 4px;
+}
+
+.settings-sub {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.3);
+    margin: 0;
+}
+
+/* ── Cards ── */
+.settings-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 16px;
+    padding: 22px 24px;
+    transition: border-color 0.2s;
+}
+
+.settings-card:hover {
+    border-color: rgba(255, 255, 255, 0.11);
+}
+
+.card-section-title {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    color: rgba(255, 255, 255, 0.3);
+    font-weight: 600;
+    margin: 0 0 18px;
+}
+
+/* ── Avatar Card ── */
+.avatar-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.avatar-circle {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #378ADD, #8B5CF6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 3px rgba(55, 138, 221, 0.2);
+}
+
+.avatar-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.avatar-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: white;
+    margin: 0 0 3px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.avatar-email {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.35);
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.avatar-badge {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 20px;
+    background: rgba(148, 210, 189, 0.12);
+    color: #94D2BD;
+    border: 1px solid rgba(148, 210, 189, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    flex-shrink: 0;
+}
+
+/* ── Fields ── */
+.field-group {
+    margin-bottom: 16px;
+}
+
+.field-group:last-of-type {
+    margin-bottom: 22px;
+}
+
+.field-label {
+    display: block;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: rgba(255, 255, 255, 0.35);
+    font-weight: 500;
+    margin-bottom: 7px;
+}
+
+.field-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 10px;
+    padding: 10px 14px;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.field-wrap:focus-within {
+    border-color: rgba(148, 210, 189, 0.45);
+    background: rgba(148, 210, 189, 0.04);
+}
+
+.field-icon {
+    font-size: 14px;
+    flex-shrink: 0;
+    opacity: 0.6;
+}
+
+.field-input {
+    flex: 1;
+    background: none;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 13px;
+    font-family: 'Outfit', sans-serif;
+}
+
+.field-input::placeholder {
+    color: rgba(255, 255, 255, 0.18);
+}
+
+.toggle-pass {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    opacity: 0.5;
+    padding: 0;
+    transition: opacity 0.2s;
+    flex-shrink: 0;
+}
+
+.toggle-pass:hover {
+    opacity: 1;
+}
+
+/* ── Save Button ── */
+.save-btn {
+    width: 100%;
+    padding: 11px 0;
+    border-radius: 10px;
+    border: 1px solid rgba(148, 210, 189, 0.3);
+    background: rgba(148, 210, 189, 0.12);
+    color: #94D2BD;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Outfit', sans-serif;
+    transition: all 0.2s;
+    letter-spacing: 0.02em;
+}
+
+.save-btn:hover {
+    background: rgba(148, 210, 189, 0.2);
+    border-color: rgba(148, 210, 189, 0.5);
+    transform: translateY(-1px);
+}
+
+.save-btn.saved {
+    background: rgba(29, 158, 117, 0.15);
+    border-color: rgba(29, 158, 117, 0.4);
+    color: #1D9E75;
+}
+
+/* ── Danger Zone ── */
+.danger-card {
+    border-color: rgba(226, 75, 74, 0.15);
+}
+
+.danger-card:hover {
+    border-color: rgba(226, 75, 74, 0.25);
+}
+
+.danger-title {
+    color: rgba(226, 75, 74, 0.6) !important;
+}
+
+.danger-desc {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.3);
+    margin: 0 0 16px;
+}
+
+.danger-btn {
+    padding: 9px 20px;
+    border-radius: 9px;
+    border: 1px solid rgba(226, 75, 74, 0.3);
+    background: rgba(226, 75, 74, 0.08);
+    color: #E24B4A;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Outfit', sans-serif;
+    transition: all 0.2s;
+}
+
+.danger-btn:hover {
+    background: rgba(226, 75, 74, 0.15);
+    border-color: rgba(226, 75, 74, 0.5);
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+}
